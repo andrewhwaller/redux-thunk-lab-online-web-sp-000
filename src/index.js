@@ -6,7 +6,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import catsReducer from './reducers/catsReducer.js';
 
+const store = createStore(catsReducer)
+ 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
